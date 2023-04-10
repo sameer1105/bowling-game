@@ -73,6 +73,18 @@ namespace bowling_game_test
             Assert.Equal(300, game.Score());
         }
 
+        [Fact]
+        public void ScoreAfterTwoFrame()
+        {
+            var game = new BowlingGame();
+            game.Open(2, 4);
+            game.Open(2, 4);
+            game.Bonus(10);
+            game.Spare(5,5);
+            game.Open(2, 4);
+            Assert.Equal(40, game.Score());
+        }
+
         /// <summary>
         /// 
         /// </summary>

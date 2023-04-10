@@ -15,7 +15,7 @@ namespace bowling_game
 
         public override int Score()
         {
-            return throws[startingIndex] + throws[startingIndex + 1] + throws[startingIndex + 2]; ;
+            return throws[startingIndex] + throws[startingIndex + 1] + throws[startingIndex + 2];
         }
     }
 }
