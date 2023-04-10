@@ -2,7 +2,7 @@
 {
     public class BowlingGame
     {
-        public List<Frame> frames;
+        public List<IFrame> frames;
         public List<int> throws;
 
         /// <summary>
@@ -11,7 +11,7 @@
         /// </summary>
         public BowlingGame()
         {
-            frames = new List<Frame>();
+            frames = new List<IFrame>();
             throws = new List<int>();
         }
 
@@ -55,7 +55,7 @@
         public int Score()
         {
             int total = 0;
-            foreach(Frame frame in frames)
+            foreach(IFrame frame in frames)
             {
                 total += frame.Score();
             }

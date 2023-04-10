@@ -6,14 +6,19 @@ using System.Threading.Tasks;
 
 namespace bowling_game
 {
-    public class StrikeFrame : Frame
+    public class StrikeFrame : IFrame
     {
-        public StrikeFrame(List<int> throws) : base(throws)
+        protected List<int> throws;
+        protected int startingIndex;
+
+        public StrikeFrame(List<int> throws)
         {
+            this.throws = throws;
+            startingIndex = throws.Count;
             throws.Add(10);
         }
 
-        public override int Score()
+        public int Score()
         {
             return throws[startingIndex] + throws[startingIndex + 1] + throws[startingIndex + 2]; ;
         }

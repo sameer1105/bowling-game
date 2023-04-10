@@ -6,14 +6,19 @@ using System.Threading.Tasks;
 
 namespace bowling_game
 {
-    public class BonusRoll : Frame
+    public class BonusRoll : IFrame
     {
-        public BonusRoll(List<int> throws, int firstThrow) : base(throws)
+        protected List<int> throws;
+        protected int startingIndex;
+
+        public BonusRoll(List<int> throws, int firstThrow)
         {
+            this.throws = throws;
+            startingIndex = throws.Count;
             throws.Add(firstThrow);
         }
 
-        public override int Score()
+        public int Score()
         {
             return 0;
         }
